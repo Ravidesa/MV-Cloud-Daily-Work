@@ -6,7 +6,7 @@ body{
 
 .container{
     /* text-align: center; */
-    width: 29%;
+    width: 40%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: blanchedalmond;
     border: 5px solid #00755E;
@@ -27,6 +27,10 @@ body{
     padding-right: 10px;
 }
 
+.col-md-6 > div{
+    width: 100%;
+}
+
 .col-md-12{
     display: flex;
     align-items: center;
@@ -39,12 +43,20 @@ body{
     width: 100%;
 }
 
+.col-md-12 > div > input{
+    width: 97.5%;
+}
+
+.col-md-12 > div > textarea{
+    width: 97.5%;
+}
+
 input{
-    width: 100%;
+    width: 95%;
 }
 
 select{
-    width: 100%;
+    width: 90%;
 }
 
 p{
@@ -52,7 +64,7 @@ p{
     color:  #00755E;
 }
 
-.displays{
+.col-md-6 > div > .displays{
     display: inline-flex;
     width: 100%;
 }
@@ -69,4 +81,8 @@ p{
     padding: 5px 10px;
     background-color: #A9BA9D;
     border-radius: 17%;
+}
+
+input[type="radio"]{
+    width: 5%;
 }
