@@ -1,17 +1,22 @@
 body{
-    background-color: bisque;
+    /* background-color: bisque; */
     width: 100%;
     height: 100%;
 }
 
 .container{
     /* text-align: center; */
-    width: 30%;
+    width: 29%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: blanchedalmond;
+    border: 5px solid #00755E;
 }
 
-.align-center{
+.heading{
     text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:  lightgray;
 }
 
 .col-md-6{
@@ -25,7 +30,7 @@ body{
 .col-md-12{
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -38,20 +43,30 @@ input{
     width: 100%;
 }
 
+select{
+    width: 100%;
+}
+
 p{
     margin-bottom: 0;
+    color:  #00755E;
 }
 
 .displays{
     display: inline-flex;
-    /* display: contents; */
     width: 100%;
 }
 
 .btn{
     text-align: end;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:  lightgray;
 }
 
 .btn > button{
     margin: 5px;
+    padding: 5px 10px;
+    background-color: #A9BA9D;
+    border-radius: 17%;
 }
