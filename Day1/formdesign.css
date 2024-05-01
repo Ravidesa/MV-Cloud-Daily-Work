@@ -6,7 +6,7 @@ body{
 
 .container{
     /* text-align: center; */
-    width: 40%;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: blanchedalmond;
     border: 5px solid #00755E;
@@ -65,8 +65,7 @@ p{
 }
 
 .col-md-6 > div > .displays{
-    display: inline-flex;
-    width: 100%;
+    display: inline;
 }
 
 .btn{
@@ -84,5 +83,9 @@ p{
 }
 
 input[type="radio"]{
+    width: 5%;
+}
+
+input[type="checkbox"]{
     width: 5%;
 }
