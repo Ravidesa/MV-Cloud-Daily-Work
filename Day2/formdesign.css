@@ -1,0 +1,57 @@
+.container{
+    padding: 20px 20px 30px 20px;
+    width: 30%;
+    margin: auto;
+    background-color: #E8E9EB;
+}
+
+h4{
+    margin-top: 0px;
+}
+
+h4 > span {
+    background-color: #8fd3fe;
+    padding: 5px 10px;
+    border-radius: 100% 100% 100% 0%;
+    margin-right: 5px;
+}
+
+.first{
+    width: 100%;
+    padding-bottom: 15px;
+    /* margin-bottom: 20px; */
+}
+
+input, textarea, select{
+    width: 95%;
+    padding: 5px;
+    border: none;
+    background-color: #D4D4D4;
+    margin-bottom: 10px;
+}
+
+/* textarea{
+    width: 95%;
+    padding: 5px;
+    border: none;
+    background-color: #D4D4D4;
+    margin-bottom: 10px;
+}
+
+select{
+    width: 95%;
+    padding: 5px;
+    border: none;
+    background-color: #D4D4D4;
+    margin-bottom: 10px;
+} */
+
+.btn-design{
+    width: 100%;
+    background-color: #8fd3fe;
+    border: none;
+    padding: 15px;
+    color: white;
+}
+
+
