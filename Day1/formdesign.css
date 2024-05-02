@@ -65,7 +65,7 @@ p{
 }
 
 .col-md-6 > div > .displays{
-    display: inline;
+    display: flex;
 }
 
 .btn{
