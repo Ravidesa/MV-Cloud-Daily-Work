@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Arithmetic Calculator</h3>
+        <div class="inputs ">
+            <input class="input-design" type="number" id="num1" />
+            <input class="input-design" type="number" id="num2" />
+        </div>
+        <div class="inputs">
+            <button onclick="calculate('add')">+</button>
+            <button onclick="calculate('sub')">-</button>
+            <button onclick="calculate('div')">/</button>
+            <button onclick="calculate('mul')">*</button>
+        </div>
+        <div class="inputs">
+            <input class="res-design" type="text" id="res" readonly>
+        </div>
+    </div>
+
+    <script src="./calculator2.js"></script>
+
+</body>
+</html>

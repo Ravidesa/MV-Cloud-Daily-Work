@@ -1,0 +1,39 @@
+.container{
+    margin: auto;
+    text-align: center;
+    width: 35%;
+    padding: 20px ;
+    background-color: antiquewhite;
+}
+
+.inputs{
+    margin-top: 5%;
+}
+
+input{
+    width: 80%;
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+h3{
+    margin: 0px;
+    font-family: Arial, sans-serif;
+}
+
+.input-design{
+    background-color: beige;
+    border-color: rgb(237, 237, 221);
+}
+
+.res-design{
+    background-color: honeydew;
+    border-color: rgb(216, 233, 216);
+}
+
+
+.inputs > button{
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-align: center;
+}
