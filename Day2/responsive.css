@@ -10,6 +10,11 @@ body{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: blanchedalmond;
     border: 5px solid #00755E;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .heading{
@@ -74,7 +79,23 @@ p{
     border-radius: 17%;
 }
 
-@media (max-width: 790px){ /*for 1680 x 1050*/
+@media (max-width: 376px) {
+    .container{
+        width: 85%;
+    }
+}
+
+@media (max-width: 587px) {
+    .container{
+        width: 85%;
+    }
+}
+@media (max-width: 790px){
+
+    .container{
+        width: 70%;
+    }
+
     .col-md-6{
         display: block;
         /* align-items: center;

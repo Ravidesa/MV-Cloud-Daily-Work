@@ -90,6 +90,10 @@ input[type="checkbox"]{
     width: 5%;
 }
 
+input[type="range"]{
+    width: 92%;
+}
+
 .alert{
     width: auto;
     background-color: rgb(0, 255, 106);

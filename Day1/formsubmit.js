@@ -29,10 +29,8 @@ function submitForm(e) {
 
   saveData(firstName, lastName, email, password, cpassword, gender, age, bio, income);
 
-  //display message
   document.querySelector(".alert").style.display = "block";
 
-  //remove message
   setTimeout(() => {
       document.querySelector(".alert").style.display = "none";
   }, 2000);
@@ -56,3 +54,7 @@ const saveData = (firstName, lastName, email, password, cpassword, gender, age, 
     income: income,
   });
 };
+
+function updateTextInput(val) {
+  document.getElementById('textInput').innerText=val; 
+}

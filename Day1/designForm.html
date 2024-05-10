@@ -88,7 +88,8 @@
                     </div>
                     <div>
                         <p>Income:</p>
-                        <input type="range" name="income" id="income" value="0" min="0" max="100" placeholder="enter your last name">
+                        <input type="range" name="income" id="income" value="0" min="0" max="100" onchange="updateTextInput(this.value);"  placeholder="enter your last name">
+                        <span id="textInput"></span>
                     </div>
                 </div>
 
