@@ -1,0 +1,143 @@
+
+body{
+    background: url('../Task1/image1.jpg');
+    background-size: cover;
+    margin: 0;
+}
+
+nav{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004274;
+    margin-bottom: 50px;
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+.logo{
+    color: #E8E9EB;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #E8E9EB;
+}
+
+.container{
+    padding: 20px 20px 30px 20px;
+    width: 30%;
+    margin: auto;
+    background-color: #E8E9EB;
+}
+
+h4{
+    margin-top: 0px;
+}
+
+h4 > span {
+    background-color: #8fd3fe;
+    padding: 5px 10px;
+    border-radius: 100% 100% 100% 0%;
+    margin-right: 5px;
+}
+
+.first{
+    width: 100%;
+    padding-bottom: 15px;
+    /* margin-bottom: 20px; */
+}
+
+input, textarea, select{
+    width: 95%;
+    padding: 5px;
+    border: none;
+    background-color: #D4D4D4;
+    margin-bottom: 10px;
+}
+
+input[type="radio"]{
+    width: 10%;
+}
+
+.gender{
+    margin-bottom: 5px;
+}
+
+.btn-design{
+    width: 100%;
+    background-color: #8fd3fe;
+    border: none;
+    padding: 15px;
+    color: white;
+}
+
+.t-end{
+    text-decoration: none;
+}
+
+.last{
+    margin-top: 15px;
+    text-align: center;
+}
+
+#error-msg{
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.login-title{
+    text-align: center;
+}
+
+.container-2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+}
+
+.container-2 .box2{
+    width: 400px;
+}
+
+.container-2 .box2 h1{
+    margin: 0px;
+    font-size: 39px;
+    font-weight: 500;
+    color: azure;
+}
+
+.container-2 .box2 p{
+    font-weight: 200;
+    color: antiquewhite;
+}
+
+.container-2 .box {
+    width: 400px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 0px 30px 30px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    color: #004274;
+}
+
+.box h2{
+    font-size: 39px;
+    font-weight: 500;
+    margin: 30px 0px 10px 0px;
+}

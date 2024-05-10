@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="registrationForm.html">Registration</a></li>
+            <li><a href="loginForm.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <p id="error-msg"></p>
+
+        <form id="myForm">
+            <div class="form-design">
+                <div class="first">
+                    <h4><span>1</span> Registration Form</h4>
+                    <input type="text" placeholder="Your First Name" id="fname" /><br />
+                    <input type="text" placeholder="Your Last Name" id="lname"/><br />
+                    <input type="email" placeholder="Your Email" id="email" /><br />
+                    <input type="password" placeholder="Your password" id="password" /><br />
+                    <textarea rows="2" placeholder="About yourself" id="aboutYour"></textarea><br />
+ 
+                   <div class="gender">
+                        <label>Gender:</label>
+                        <input type="radio" name="gender" id="male" value="male">Male
+                        <input type="radio" name="gender" id="female" value="female">Female
+                    </div>
+                </div>
+                <div class="first">
+                    <h4><span>2</span>Additional Info</h4>
+                    <textarea rows="2" placeholder="About Your School" id="yourschool"></textarea>
+                </div>
+
+                <div class="btn">
+                    <button class="btn-design" id="myButton">Submit</button>
+                </div>
+
+                <div class="last">
+                    Have already an account ? 
+                    <a href="./loginForm.html" class="t-end">Login Here</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script src="registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body,
+html {
+  height: 100%;
+  background-color: azure;
+}
+
+/* width: 50%; */
+
+.container {
+  background-image: url("image1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item{
+    background-color: antiquewhite;
+    border-radius: 100%;
+    opacity: 1;
+}
+
+.item:hover{
+    opacity: 0;
+}

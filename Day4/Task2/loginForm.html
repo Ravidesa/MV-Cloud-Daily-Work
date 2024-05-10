@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="registrationForm.html">Registration</a></li>
+            <li><a href="loginForm.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <p id="error-msg"></p>
+
+        <form id="myForm">
+            <div class="form-design">
+                <div class="first">
+                    <h4 class="login-title"> Login Form</h4>
+                    <input type="email" placeholder="Your Email" id="email" /><br />
+                    <input type="password" placeholder="Your password" id="password" /><br />
+                </div>
+
+                <div class="btn">
+                    <button class="btn-design" id="loginButton">Submit</button>
+                </div>
+
+                <div class="last">
+                    Don't have an account ?
+                    <a href="./registrationForm.html" class="t-end">Create New</a>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>
