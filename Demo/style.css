@@ -1,0 +1,52 @@
+.left{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.left .drag{
+    height: 170px;
+    width: 170px;
+    background-color: bisque;
+    border-radius: 50%;
+}
+
+
+.right{
+    position: absolute;
+    top:25%;
+    left: 10%;
+}
+
+.right p{
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.p1{
+    height: 200px;
+    width: 200px;
+    background-color: antiquewhite;
+}
+
+.p2{
+    height: 150px;
+    width: 150px;
+    background-color: blue;
+}
+
+.p3{
+    height: 100px;
+    width: 100px;
+    background-color: azure;
+}
+
+.p4{
+    height: 50px;
+    width: 50px;
+    background-color: brown;
+}

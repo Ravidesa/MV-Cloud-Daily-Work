@@ -1,0 +1,68 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="WrapperClassController">
+    <aura:attribute name="wrapperClassList" type="object[]" />
+    <aura:attribute name="pageNo" type="Integer" default="0" />
+    <aura:attribute name="pageSize" type="Integer" default="100" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.loadData}" />
+
+    <div class='slds-page-header slds-text-heading_medium'>
+        Account
+    </div>
+    <div class="slds-m-around_small">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+            aria-label="Example default base table of Opportunities">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Account Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Rating</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Contact Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate">Opportunity Name</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <aura:iteration var="wrap" items="{!v.wrapperClassList}">
+                    <tr class="slds-hint-parent">
+                        <th scope="row">
+                            <div class="slds-truncate">{!wrap.acc.Name}</div>
+                        </th>
+                        <td>
+                            <div class="slds-truncate">{!wrap.acc.Rating}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <aura:iteration var="con" items="{!wrap.conList}">
+                                    <p>{!con.Name}</p>
+                                </aura:iteration>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <aura:iteration var="opp" items="{!wrap.oppList}">
+                                    <p>{!opp.Name}</p>
+                                </aura:iteration>
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="slds-m-around_small slds-text-align_right">
+        <lightning:button class="slds-button slds-button_brand" label="Previous" onclick="{!c.previoudRecord}"
+            disabled="{!v.pageNo == 0}" />
+        <lightning:button class="slds-button slds-button_brand slds-m-left_large" label="Next" onclick="{!c.nextRecord}"
+            disabled="{!v.pageNo * v.pageSize >= v.wrapperClassList[0].totalRecords}" />
+    </div>
+
+</aura:component>

@@ -1,0 +1,18 @@
+<apex:page controller="ContactControllerWithCustomPagination">
+    <apex:form >
+    	<apex:pageBlock title="List of Contacts">
+        	<apex:pageBlockTable value="{!contacts}" var="con">
+                <apex:column value="{!con.id}" />
+                <apex:column value="{!con.Name}"/>
+                <apex:column value="{!con.Email}" />
+                <apex:column value="{!con.Phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+       
+        <apex:commandButton action="{!previous}" value="Previous" />
+       	
+        <apex:commandButton action="{!next}" value="Next"/>
+        
+    </apex:form>
+</apex:page>

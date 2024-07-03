@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="first" id="first">
+
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="second">
+
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="left" id="left">
+            <p class="circle" draggable="true"></p>
+            <p class="circle" draggable="true"></p>
+            <p class="circle" draggable="true"></p>
+        </div>
+        <div class="right" id="right">
+            <p></p>
+        </div>
+    </div> -->
+
+    <script src="index.js"></script>
+    <!-- <script>
+        let circle = document.getElementsByClassName("circle");
+        let leftBox = document.getElementById("left");
+        let rightBox = document.getElementById("right");
+
+        for(ele of circle){
+            ele.addEventListener("dragstart", function(e){
+                let selected = e.target;
+                console.log(selected);
+
+                rightBox.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                })
+
+                rightBox.addEventListener("drop", function(e){
+                    selected.style.height = '20px';
+                    selected.style.width = '20px';
+                    rightBox.appendChild(selected);
+                    selected = null;
+                })
+
+            })
+        }
+    </script> -->
+</body>
+
+</html>

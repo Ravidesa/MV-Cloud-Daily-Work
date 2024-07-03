@@ -1,0 +1,339 @@
+sf project deploy start --manifest .\manifest\package.xml --target-org DevHub
+sf project retrieve start -m AuraDefinitionBundle:DemoApp  -o DevHub
+
+
+display all force.com page
+SELECT Name, CreatedDate, LastModifiedDate FROM ApexPage
+
+
+Triggers:
+	sf project deploy start --metadata ApexTrigger:myTrigger --target-org myscratch
+
+	isInsert : is it is insertion operation
+	
+	isBefore: Returns true if this trigger was fired before any record was saved.
+	isAfter: Returns true if this trigger was fired after all records were saved.
+
+	
+	After Update : this is fired when our record is saved in database but not committed yet. ex: your record is saved then after 		triggers is works and then some more operations will be executed and after that your record is actually committed in DB
+		so, if any failure occurs whole process will be rolled back. 
+
+
+Exception Handling : 
+ErrorLogs err = new ErrorLogs();
+
+try{
+    List<Account> accList = [SELECT Id FROM Account WHERE Name like 'NewOne Account' LIMIT 1];
+    for(Account acc : accList){
+        System.debug(acc.Id);
+        System.debug(acc.Name);
+    }
+}catch(Exception e){
+    System.debug(e.getMessage());
+    System.debug(e.getTypeName());
+    err.insertExection(e, ErrorLogs.class.getName());
+}finally{
+    System.debug('Executed!!');
+}
+
+
+
+Asynchronous Apex: 
+	Batch Apex: it is used to run large job which exceed normal processing limits.
+		it divide large number of records into small batches and batches are run one by one.
+		advantages: every transaction starts with a new set of governor limits.
+			   if one batch fails to process successfully, all other successful batch transactions aren't rolled back.
+	
+	AccountBatchApex accObj = new AccountBatchApex();
+	ID batchId = Database.executeBatch(accObj);
+	System.debug('Batch Id: ' + batchId);
+		
+	three methods:
+		Start : execute only once at the beginning of the batch apex job.
+			it returns Database.QueryLocator object or Iterable that contains records or object passed to the job.
+			Database.QueryLocator is used then SOQL queries is bypass and 50 million record can be queried.
+			Iterable, governor limit by SOQL queries is enforced means governor limits are applied.
+		
+		execute: in which we write the actual business logic.
+			 default batch size is 200 records and it runs for each batches.
+			 Batches of records can execute in any order and it doesn't depend on which order it receive the records from 			 the start methods.
+		
+		finish: Execute post-processing operations.
+			Calls once after all the batches are processed.
+			for ex.: sending mail after completion of th	e process.
+
+	String cronExpression = '0 15 14 * * ?';
+	ScheduledBatchAccountUpdate scherduleObj = new ScheduledBatchAccountUpdate();
+
+	system.schedule('Run At 3:14 PM', cronExpression, scherduleObj);
+
+
+	Future Apex: Run in their own thread , and do not start until resources are available. We can used primitives and collections 		     of primitive types.
+		     it is used for executing long-running operations, such as callouts to external Web services or any operation		     you’d like to run in its own thread, on its own time.
+
+	FutureOpportunity.getAllData('006dL000001OJ7NQAW');
+
+
+	Queueable Apex: similar to future apex, but provide additional job chaining and allow more complex data types to be used. we 			can use non-primitive data types as well.
+	scheduled apex: Schedule apex to run at a specified time.
+	
+	String cron = '0 48 11 ? * 3-4';
+	ScheduleAccountRatingChange obj = new ScheduleAccountRatingChange();
+	system.schedule('Updating account rating with warm', cron, obj);
+
+
+
+HttpResponse res = FutureOpportunity.getAllData();
+Map<String, Object> resMap = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+
+for(String str : resMap.keySet()){
+    if(str == 'urls'){
+        System.debug(str);
+        System.debug(resMap.get(str));
+    }    
+}
+
+
+
+HttpResponse res = FutureOpportunity.getAllData();
+Map<String, Object> resMap = (Map<String, Object>) JSON.deserializeUntyped(res.getBody());
+Object rewq = (resMap.get('urls'));
+system.debug('bcjdsb--->'+ rewq);
+
+String jsonText = JSON.Serialize(rewq);
+
+system.debug('bcjdsb--->'+ jsonText);
+
+Map<String, Object> account = (Map<String, Object>) JSON.deserializeUntyped(jsonText);
+
+system.debug('account--->'+account);
+
+system.debug('account--->'+(account.get('full')));
+
+String a = (String)(account.get('full'));
+List<String> resq = new List<String>();
+String Aresq = A.substringBefore('?'); 
+System.debug(Aresq);
+//System.debug(resq[0]);
+
+
+
+
+Test :
+	Opportunity test completed
+	lead completed
+	Account
+	contact
+	AccountBatch
+
+Workbench:
+	for 2000 rec of account :
+
+	List<Account> accList = new List<Account>();
+for(Integer i=1; i<=2000; i++){
+  Account acc = new Account();
+  acc.Name = 'Test Acc Demoo'+i;
+  acc.Rating = 'Hot';
+  accList.add(acc);
+}
+insert accList;
+System.debug('Inserted!');
+
+
+for retrieving :
+
+List<Account> accList = [SELECT Id, Name FROM Account WHERE Name like 'Test Acc Demoo%'];
+for(Account acc : accList){
+  System.debug('Name is --> '+acc.Name);
+}
+System.debug('Size of the Account List is -->'+accList.size());
+system.debug('Done !!!');
+
+
+
+metdata api:
+	with the help of metadata api we are able to create, manipuolate and updatae the metadata of salesforce.
+	with the help of metadata api we able to create object, pagelayout, record type, validation rule etc. and we can create anything we want inside the salesforce org.
+
+
+
+
+
+Aura Component : 
+	
+Component bundle: Aura component bundle is a composition of all the related resources which together makes an Aura Component.
+	
+	so, in the client side there are below files comes:
+		Application/Component (The View file)(.cmp or .app) : where we write the markup that will be rendering on the 				    browser. Each bundle contains only one component or app resource.
+		Controller : client side controller methods to handle events in the component and this controller interact with apex 			     controller.
+		Helper : JS functions that can be called from any JS code in a component's bundle and this file interact with the 			 apex controller
+		Style(CSS): Styles for the component.
+		Documentation : description, sample code and one or multiple referances to example components.
+		Renderer : Client-side renderer to override default rendering for a component.
+		SVG : Custom icon resources for components used in the lightning app builder.
+		
+		whenever we perform client side business logic so controller and helper perform those and they don't interact with 		server again and again because whole code reside at the client side.
+	
+	Whenever we load the lighting component first time so, all of these files are loaded at the client side.
+
+	Server side : 
+		ApexController : now if we want to interact with the database where our sObjects are available. so to interact with 			those sObject we need to create one more file which is known as ApexController and this file reside on the 			server always. so all the SOQL or DML we'll be implementing inside the apex controller.
+
+	
+   Only app has a preview button in the developer console.
+
+
+What is Application ?
+	An app is just a special kind of Component.
+	We can think of an app as being different from component in only two ways:
+		An app uses <aura:application> tag instead of <aura:component> tag
+		Only an app has a Preview button in the developer console.
+
+
+forceCommunity:availableForAllPageTypes
+It allows you to create a component that is available for drag and drop in experience builder (community)
+
+
+Attribute is basically known as variable in aura component
+
+
+
+
+Aura Component
+
+List<Account> accList = [SELECT Id, Name, (SELECT Id, FirstName, LastName FROM Contacts) FROM Account limit 1];
+List<Contact> conList = new List<Contact>();
+for(Account acc : accList){
+    conList = acc.contacts;
+}
+
+System.debug('Size of conlist is--> '+conList.size());
+
+for(Contact con : conList){
+    System.debug(con.FirstName);
+}
+
+
+https://images.pexels.com/photos/1646311/pexels-photo-1646311.jpeg
+
+https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg
+#ADA195
+#74695A
+
+
+
+
+
+
+
+
+-------------******** L W C *********-------------------
+
+LWC Lifecycle : 
+	the framework creates components, inserts them into DOM, render them and remove from the DOM. it also monitors components for  	property changes.  
+	
+	during the life cycle pre-described methods are invoked which are listed below :
+		constructor(),
+		connectedCallback(),
+		renderedCallback(),
+		disconnectedCallback(),
+		errorCallback(error, stack)
+		
+	1.) constructor() is called when component is created. properties aren't passed yet either. properties are assign to the 	    component before connectdCalback() hook.
+	
+	2.) connectedCallback() is called when the element is inserted into a document. By the time this method invoked, all @api 	    properties would have received the data from the parent and we can use that data to make call to the apex method.
+	    The connectedCallback() hook can fire more than one time.
+	
+	3.) renderedCallback() is called after every render of the component. This hook flows from child to parent. Once the 		    component is completely rendered that's when this lifecycle hook in LWC gets invoked.
+	
+	4.) disconnectedCallback() is called when the element is removed from the document. This hook flows from parent to child.
+	    when we want to have some logic that has to be executed when the component is destroyed this life cycle hook in LWC comes          	    in handy. 
+	    Use disconnectedCallback() to clean up work done in the connectedCallback(), like purging caches or removing 
+            event listeners. You can also use this hook to unsubscribe from a message channel.
+
+	5.) errorCallback(error, stack) is called when descendant component throws an error. the error argument is a javascript   	    native error object and the satck argument is a string. when there is an error in the process of instantiating the 		    scomponent, connecting or rendering the component this life cycle hook get fired up.
+
+
+LWC Folder :
+	it is nothing but the collection of files which is know as component.
+	to create a component, first create a folder that bundles your component's files.
+	the folder and its files must have the same name, including capitalization and underscores.
+
+LWC Folder and File Rules:
+	Must begin with lowercase letter.
+	Must contain alphanumeric or underscore characters.
+	Must be unique in the namespace
+	can't include whitespace and also can't end with an underscore
+	can't contain two consecutive underscores
+	can't contain a hyphen(dash)
+
+LWC Configuration File :
+	this file decide whether you can use your lightning web component outside or not.
+
+SVG Icon :
+	A component can include an SVG resource to use as a custom icon in Lightning App builder and experience builder.
+	it must be named <component>.svg.
+	we can only have one SVG per folder.
+
+myComponent: 
+	myComponent.html, myComponent.js, myComponent.js-meta.xml(Configuration File), myComponent.css, myComponent.svg
+
+----
+
+import 	JS Function from current Folder
+
+import {LightningElement} from 'lws';
+import {SomeFunction} from './someUtils';
+
+exports default class MyComponent extends LightningElement{
+	// write your code here
+}
+-----
+
+-----
+import JS function from another folder
+
+import {LightningElement} from 'lws';
+// the difference is here 'c'
+import {SomeFunction} from 'c/someUtils';
+
+exports default class MyComponent extends LightningElement{
+	// write your code here
+}
+------
+
+
+
+
+LWC - Decorators :
+	Decorators are often used in JavaScript to modify the behavior of a property or function.
+	 - @api, @track, @wire.
+	
+	@api : 
+	  -By default whatever property we declare it is local means those property can be used in the html file of the same
+	   component.
+	 - Marks a field as public.
+	 - HTML markup can access the component's public properties.
+	 - All public properties are reactive.
+	 - Reactive means the framework observe the property for change.
+	 - when property changes value then the framework reacts and render the component.
+	 - field and property are interchangeable terms.
+	 - reactive means simply, whenever the id is available then hit that. 
+
+	ex : 
+	 @api message; // public property. can able to fetch value from outside the lightning component.
+	 value 	       // private property. we can use this inside the component. it can't interact outside the component.
+
+	@track :
+	 -Observe chnages to the properties of an object or to the elements of an array.
+	 -Framework render the component when chnages occurs.
+
+	@wire :
+	 - it provides a way to get and bind data from salesforce org.
+	 - the wire service provisions an immutable stream of data to the component.
+	 - each value in stream is newer version of the value that precedes it.
+	 - object passed to a component are read-only.
+
+	 - use with predefine module and seconds is to use with  apex class method.
+	
+	 - if property is decorated with @wire, the results returned to the property's data property or error property. and if 		   function is decorated with @wire, the results returned in an object with a data property and an error property.

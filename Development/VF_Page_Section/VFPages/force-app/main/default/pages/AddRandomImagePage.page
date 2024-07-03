@@ -1,0 +1,14 @@
+<apex:page standardController="Opportunity" extensions="opportunityExtensionsController">
+    <p>
+        <!-- {!greeting} -->
+    </p>
+    <apex:form >
+        <apex:pageBlock title="Opportunity">
+       		<apex:pageBlockSection columns="1">
+           		<!-- <apex:inputField value="{!opportunity.name}"/> -->
+           		<apex:commandButton action="{!uploadImage}" value="Insert Image" />
+        	</apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

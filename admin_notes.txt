@@ -1,0 +1,316 @@
+types of tabs:
+
+--> custom object tabs in this, we are able store and access the records present in the custom object.
+
+--> visualforce tab it helps us to build UI. like suppose i have created one custom page and i want to access that page just by clicking the tab at that time i used the visualforce tab
+
+--> lightning tab it similar to the visualforce but in this we create the page with the help of lightning framework.
+
+--> web tab if we gonna access any external application like Wikipedia inside the salesforce. we can do that with the help of web tab or by creating the web tab.
+
+
+Custom settings
+custom is a place where we need to put easily accessible and frequently accessible data.
+we can not create custom tab for the custom setting.
+two types: 
+	1. List : Same data for every user in the org. eg. Country phone code which same for every user
+	2. Hierarchy : data can be fetched based on profile and user. eg. Amazon Diwali sale
+
+for fetching the custom setting we do need to querying we just have to give command.
+
+dis : it can not be deployed,  only 300 field allows for custom settings
+
+
+Custom Metadata
+Custom metadata is similar to the custom setting except this is deploy-able across environments.
+to fetch the data we can use querying or soql to get the data but the query on the metadata is not counted for the governor limits.
+custom metadata ends with __mdt.
+
+also we can put validation.
+available data types which are not in custom settings --> picklist, textarea(long)
+
+highlights of metadata
+1. we can use validation rules
+2. page layouts
+	
+both of them will stay in the cache memory.
+
+
+diff b/w cus.settings and cus.metadata
+1. settings does not need queries whereas need queries to get metadata
+2. custom settings are easy to access whereas easy to deploy metadata
+3. settings allows diff data for diff user and profile by hierarchical cus.settings type whereas cus.metadata allows validation rules, page layout. 
+
+
+
+Web-to-Lead
+process of capturing leads from website in salesforce.
+Lead is a object which is used to store information about potential customers.
+
+Web-to-Case
+it is a way to gather customer support requests directly from your company’s website and automatically generate new cases with Web-to-Case
+
+
+Chatter
+chatter is a salesforce real-time application that lets your user work together, talk to each other, and share information.
+chatter connects, engages, and motivates users to work efficiently across the organization.
+
+
+
+lead assignment rule:
+in this leads are assign to the appropriate sales executive based in the information present in the record.
+
+what they are:
+	lead assignment is basically a rule that runs whenever new leads is entered into the system and we want them to be assign based on the assignment rule and that rule contains diff. diff. rules` entries and those rule entries has condition based on which you  can assign those leads record to diff. diff. users in your org.
+
+there is multiple rule entry in the assignment rule and rule entry consist of two thing a criteria and assigning. eg. if the criteria mats then this record will be assign to this assignee. and if it does not meet with the criteria in that situation it will go for the second rule entry.
+
+there can be may assignment rules in one object or in one leads but whichever assignment rule is active leads will be assign based on that rule not other rules present in the object.
+
+
+Approval Process:
+it is an automated process and it is implemented to approve records.
+And also we can specify the steps which are necessary for approval.
+in this, we can also define who will be approving at each step.
+
+
+
+workflow
+it is automated tool where we need to set criteria and if the criteria is met an action will be performed.
+	tasks create, field update(not child), email alert, outbound message
+
+Process Builder
+	create record, update record, email alert, submit for approval, post to chatter, apex code, quick actions, processes
+	when to use : when requirement is to start automated business process behind the scene.
+
+
+
+Report:
+	Report is list of records related to objects that meet the criteria defined.
+	one can filter, group and do math on report.
+	can display report through graph
+	and it is stored in folder
+	folder can determine how one can access report to view, edit or Manage.
+	Report folder can be public, hidden or shared.
+
+Dashboard:
+	it is a visual display of key metrics and trends for records in your org.
+	source of dashboard is reports
+	having multiple reports on a single dashboard page makes it a powerful visual display tool.
+
+
+Sharing Records:
+	for the literal access we have to write the sharing rules.
+	in this we can share records of those user which are in same role hierarchy
+
+Force.com
+	it is nothing but when our business not satisfied with the inbuild functionality of salesforce so then we can customized 
+
+	the standard CRM provided by the salesforce doesn't suit your needs so for that salesforce provide functionality to 	customize or built on the top of the CRM to customize so that is called PaaS and that is called force.com 
+
+Site Template:
+	The template that provides the page layout and style sheet for your site. The site template overrides the formatting 	inherited from the associated portal. Use the lookup field to find a template that you’ve developed, or use the provided 	template.
+
+
+Platform Event:
+	Platform Events exchange event data in real-time within the Salesforce platform, and between Salesforce and external 	platforms. 
+
+	it is special kind of salesforce entity, similar ways to an sObject.
+	event mgs is an instance of platform event.
+	
+	We can't update, delete and view the event record. but we can set read and create permission events using either profiles
+	and permission sets.
+	
+	we can't query them through SOQL or SOSL. Similarly, we can't use event records in the user interface in reports, list 	views
+ and search.
+
+	In short, Platform Events are Salesforce broadcasting when there have been changes.
+
+	there are two types of publish behavior: 
+		publish After Commit: transactional and can be rolled back.
+			published only after a transaction commits successfully.
+			use this when we do not want the event msg to be published if the transaction fails.
+		
+		Publish immediately: not transactional and can not rolled back.
+
+	there are two types of platform events:
+		Standard-volume events: define before Spring'19 are stored for 24 hours in the event bus.
+			you can no longer define such events.
+		High-volume events: new define event are high volume by default.
+			salesforce stores high-volume platform event for 72 hours in the event bus 
+
+
+Communities: 
+	Salesforce Communities is a tool that enables businesses to connect with their customers, partners, and employees in an 	engaging and secure environment. By creating a Salesforce Community, organizations can foster collaboration, streamline 	communication, and enhance customer support. 
+
+	This step-by-step guide covers the essentials of planning, designing, and implementing your custom Salesforce Community 	to help you build it from scratch.
+	
+	license:
+	Customer Community: Ideal for companies looking to provide self-service support and resources to their customers.
+	Partner Community: Designed for organizations looking to collaborate with partners, manage leads, and track 
+		opportunities.
+	Employee Community: Suitable for internal collaboration and communication among employees.
+
+
+
+Sandbox:
+	it is environment in which we test new configuration, code, and automation outside of production instance. it is like 	replica of your production instance with some or all metadata.
+	it is separate environment where we can test.
+	
+	four types:
+	developer sandbox : basic type of sandbox. A Developer Sandbox includes a copy of your production org’s configuration 				    (metadata)
+
+	developer pro sandbox: it is similar to developer sandbox but can host larger data sets than a Developer sandbox. Use a 		Developer Pro sandbox to handle more development and quality assurance tasks and for integration testing or user 		training.
+	partial copy: is intended to be used as a testing environment. it include metadata and sample data defined by the sandbox 		template. Use a Partial Copy sandbox for quality assurance tasks such as user acceptance testing, integration 			testing, and training.
+	full sandbox : support performance and load testing, staging. replica of production org, including all data with record 	and attachment
+
+Change Set:
+	Use change sets to send customizations from one Salesforce org to another.
+	Change sets can contain only modifications you can make through the Setup menu. 
+	For example, you can’t use a change set to upload a list of contact records. Change sets contain information about the 		org. They don’t contain data, such as records.
+	
+	change set can contains only modification you make through setup menu.
+
+	 Inbound Change Sets :
+		An inbound change set is a change set that has been sent from another Salesforce org to the org you are logged in 		to. A change set must be deployed for the changes to take effect. You can deploy the contents of an inbound 			change set as a whole but not on a component-by-component basis.
+	Outbound Change Sets :
+		An outbound change set is a change set created in the Salesforce org in which you are logged in and that you want 		to send to another org. You typically use an outbound change set for customizations created and tested in a 			sandbox and that are then sent to a production org.
+
+
+Scratch Org: 
+	A Salesforce scratch org is a temporary Salesforce instance, typically used for a specific development. As part of the 	Salesforce DX collection of tools, these are aimed towards developers or architects with experience in Salesforce CLI and 	Visual Studio Code.
+
+	Unlike Sandboxes, scratch orgs do not have a refresh interval as they are disposable.
+	The main difference between scratch orgs and Sandboxes is that scratch orgs take the metadata from a configurable file, 	whereas Sandboxes copy metadata from your Salesforce environment.
+
+	By default, a scratch org has no records on creation, but certain sandboxes (such as Partial or Full) will have records 	from your production environment.
+	
+	it can hold only 200MB of record and 50MB of files.
+	By default lifespan is 7 Days Default, can last for 30 days, and we can set from 1-30 days.
+
+
+
+ant-tool:
+	it is useful when we would like to transfer from one production to another.
+
+
+
+ant-tool vs sandbox:
+
+This support a command line interface. || this is UI based deployment tool.
+It support Automate deployments by executing scripts in tools like Jenkins and etc tool. || It supports only manually deployed 	between Sandbox and other Sandbox or production.
+Suitable for Large teams with Continuous deployment ||  Suitable for medium-sized teams using connected orgs
+We can deploy components in unrelated Salesforce org || With Change set we can only deploy component in related org and sandbox 	only.
+
+
+Territory:
+	hierarchy also shows how territory group inside the territory type
+	advantage: reporting
+	once we activate territory model we can not change it to planning stage we can only archivate and once arcivate you can 	not reactivate.
+
+
+external id:
+	it is a custom field which is used to identify the records uniquely in the external system while you are importing the data	
+
+
+Community:
+	Salesforce Communities is a tool that enables businesses to connect with their customers, partners, and employees in an engaging and secure environment. By creating a Salesforce Community, organizations can foster collaboration, streamline communication, and enhance customer support.
+	
+	Customer Community: Ideal for companies looking to provide self-service support and resources to their customers.
+	Partner Community: Designed for organizations looking to collaborate with partners, manage leads, and track opportunities.
+	Employee Community: Suitable for internal collaboration and communication among employees.
+
+
+
+force.com
+	ex: createNewEmployee.vfp, createNeweEmployee.apxc, thankpage.vfs
+
+
+diff communities and force.com
+	force.com is paas service whereas communities is experience cloud.
+	force.com offers developers to build and deploy the application
+	communities create space for engaging customers, partners and employees.
+	
+	force.com: support integration with external systems through api
+		   it offers security like user authentication, role based data access and data encryption
+		   it is mainly used to develop enterprise-level applications, extend Salesforce CRM functionality, and 			   integrate third-party applications.
+		   Provides drag-and-drop features for creating apps without extensive coding.
+		   Visualforce: A framework for building custom user interfaces.	
+	
+	communities: 
+		allows to business create community for different audience like customer, partners and employees).
+		offer customizable template to easily build and deploy communities.
+		communication is possible among community with help of Q&A, discussion form. 
+
+
+
+Account acc = [SELECT id, Name, Phone FROM Account WHERE Name='TEch School'];
+System.debug('ACC --> '+acc);
+
+acc.Phone = '0987654321';
+update acc;
+
+Account acc1 = [SELECT id, Name, Phone FROM Account WHERE Name='TEch School'];
+System.debug('Updated ACC --> '+acc1);	 
+
+
+
+
+----------------------
+
+field dependency : 
+	limit of 10 dependent picklist pairs per page.
+
+
+
+
+for custom setting code
+
+/*
+List<CountryPhoneCode__c> phoneCodes = CountryPhoneCode__c.getAll().values();
+
+for(CountryPhoneCode__c code : phoneCodes){
+    System.debug(code);
+}
+*/
+
+/* getSingle */
+CountryPhoneCode__c indCode = CountryPhoneCode__c.getInstance('India');
+System.debug(indCode);
+
+AmazonSale__c discount = AmazonSale__c.getValues(userinfo.getUserId());
+System.debug('Total discount is '+discount);
+
+
+
+for custom metadata
+
+List<Country_Code__mdt> data = [SELECT Label, Phone_Code__c FROM Country_Code__mdt];
+for(Country_Code__mdt code : data){
+	System.debug(code);        
+}
+
+
+
+Site Guest User
+A Site Guest User is a special type of user in Salesforce that is automatically created when you set up a Salesforce Site. This user represents all the visitors who access your Salesforce Site without logging in. The guest user has limited access to Salesforce data and functions, governed by the public access settings and profiles.
+
+Public Access Settings
+Public Access Settings are configurations that determine what data and functionalities the Site Guest User can access on a Salesforce Site. These settings are crucial for ensuring the security and proper functioning of the site. Key aspects of public access settings include:
+
+Profile Permissions: Assigning permissions to the Site Guest User profile to control what records and objects the guest user can access.
+Field-level Security: Ensuring that sensitive fields are not exposed to unauthorized users.
+Sharing Rules: Setting up rules that dictate how records are shared with the guest user.
+IP Restrictions: Limiting access based on IP ranges to enhance security.
+Public Access to Data: Configuring which data should be accessible publicly, such as knowledge articles, support forums, or product catalogs.
+
+Site Template
+A Site Template in Salesforce is a predefined structure or layout that can be used to create a new site quickly. Templates provide a starting point for building a site by including basic pages, styles, and functionalities that can be customized according to specific requirements. They help in standardizing the design and functionality of sites, ensuring a consistent user experience. Common components of a site template include:
+
+Home Page: The main landing page of the site.
+Header and Footer: Consistent elements across all pages, usually containing navigation links and branding.
+Content Pages: Various pages for displaying content, such as product information, support articles, or forms.
+Navigation: Menus and links to help users navigate the site.
+Styles and Themes: Predefined styles and themes to ensure a cohesive look and feel.
+Using a site template can significantly speed up the site creation process and ensure best practices in design and usability are followed.
+

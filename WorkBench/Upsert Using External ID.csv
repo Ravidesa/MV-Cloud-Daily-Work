@@ -1,0 +1,4 @@
+"Salesforce Id",Result,Status,Name,Rating,Description,"External Email"
+001dL000007dIPIQA2,Success,Updated,"External Account 001",Hot,"Updated external account 1",extracc001@gmail.com
+001dL000007dPycQAE,Success,Updated,"External Account 002",Hot,"Updated external account 2",extracc002@gmail.com
+001dL000007dOSyQAM,Success,Updated,"External Account 003",Hot,"Updated external account 3",extracc003@gmail.com

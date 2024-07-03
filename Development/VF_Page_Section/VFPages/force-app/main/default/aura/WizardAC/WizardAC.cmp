@@ -1,0 +1,139 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="WizardController">
+    <aura:attribute name='accountData' type="Account" default="{'Name':'', 'Rating':'Hot', 'Type':'Prospect'}" />
+    <aura:attribute name='contactData' type="Contact" default="{'LastName':''}" />
+    <aura:attribute name='eventData' type="Event" default="{'Subject':'Wizard Task'}" />
+
+    <aura:attribute name="showAccount" type="boolean" default="true" />
+    <aura:attribute name="showContact" type="boolean" default="false" />
+    <aura:attribute name="showEvent" type="boolean" default="false" />
+
+    <aura:attribute name='progessBarValue' type="Integer" default="0" />
+
+    <aura:attribute name='msgBoolean' type="boolean" default="false" />
+    <aura:attribute name='msg' type="String" default="" />
+
+    <div class='slds-page-header slds-text-heading_medium'>
+        Wizard
+    </div>
+
+    <div class="slds-m-around_small">
+        <lightning:progressBar value="{!v.progessBarValue}" size="large" />
+    </div>
+
+    <div class="slds-m-around_small">
+
+        <aura:renderIf isTrue="{!v.showAccount}">
+            <div class='slds-page-header slds-text-heading_medium'>
+                Account
+            </div>
+            <div class="slds-grid slds-m-horizontal_xx-large">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="text" label="Enter The Name" aura:Id='accName' value="{!v.accountData.Name}"
+                        required="true" />
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="tel" label="Enter the phone" aura:Id='accPhone'
+                        value="{!v.accountData.Phone}" />
+                </div>
+            </div>
+
+            <div class="slds-grid slds-m-horizontal_xx-large">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:select name="rating" label="Select Rating?" required="true" value="{!v.accountData.Rating}"
+                        aura:id="ratingValue" onchange="{!c.selectedValue}">
+                        <option value="">choose one...</option>
+                        <option value="Hot">Hot</option>
+                        <option value="Warm">Warm</option>
+                        <option value="Cold">Cold</option>
+                    </lightning:select>
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:select name="accType" label="Select Type?" required="true" value="{!v.accountData.Type}"
+                        aura:id="accTypeValue" onchange="{!c.selectedValue}">
+                        <option value="">choose one...</option>
+                        <option value="Prospect">Prospect</option>
+                        <option value="Customer - Direct">Customer - Direct</option>
+                        <option value="Customer - Channel">Customer - Channel</option>
+                        <option value="Technology Partner">Technology Partner</option>
+                    </lightning:select>
+                </div>
+            </div>
+        </aura:renderIf>
+
+        <aura:renderIf isTrue="{!v.showContact}">
+            <div class='slds-page-header slds-text-heading_medium'>
+                Contact
+            </div>
+            <div class="slds-grid slds-m-horizontal_xx-large">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="text" label="Enter First Name" aura:Id='confName'
+                        value="{!v.contactData.FirstName}" />
+                    <!-- <span>1</span> -->
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="text" label="Enter Last Name" aura:Id='conlName'
+                        value="{!v.contactData.LastName}" required="true" />
+                </div>
+            </div>
+
+            <div class="slds-grid slds-m-horizontal_xx-large">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="text" label="Enter Email" aura:Id='conEmail'
+                        value="{!v.contactData.Email}" />
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="tel" label="Enter Phone" aura:Id='conPhone' value="{!v.contactData.Phone}" />
+                </div>
+            </div>
+
+        </aura:renderIf>
+
+        <aura:renderIf isTrue="{!v.showEvent}">
+            <div class='slds-page-header slds-text-heading_medium'>
+                Event
+            </div>
+            <div class="slds-grid slds-m-horizontal_xx-large">
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="datetime" label="Select the Start Date/Time" aura:Id='startTime'
+                        value="{!v.eventData.StartDateTime}" />
+                </div>
+                <div class="slds-col slds-p-horizontal_medium">
+                    <lightning:input type="datetime" label="Select the End Date/Time" aura:Id="endTime"
+                        value="{!v.eventData.EndDateTime}" />
+                </div>
+            </div>
+
+        </aura:renderIf>
+
+        <aura:renderIf isTrue="{!v.msgBoolean}">
+            <div class='slds-page-header slds-text-heading_medium slds-text-align_center'>
+                Record Save!!
+            </div>
+        </aura:renderIf>
+
+    </div>
+
+    <aura:renderIf isTrue="{!v.showAccount}">
+        <div class="slds-m-around_small slds-text-align_center">
+            <lightning:button class="slds-button slds-button_brand" label="Previous" disabled="true" />
+            <lightning:button class="slds-button slds-button_brand" label="Next" onclick="{!c.nextTab}" />
+        </div>
+    </aura:renderIf>
+
+    <aura:renderIf isTrue="{!v.showContact}">
+        <div class="slds-m-around_small slds-text-align_center">
+            <lightning:button class="slds-button slds-button_brand" label="Previous" onclick="{!c.prevTab}" />
+            <lightning:button class="slds-button slds-button_brand slds-m-left_large" label="Next"
+                onclick="{!c.nextTab}" />
+        </div>
+    </aura:renderIf>
+
+    <aura:renderIf isTrue="{!v.showEvent}">
+        <div class="slds-m-around_small slds-text-align_center">
+            <lightning:button class="slds-button slds-button_brand" label="Previous" onclick="{!c.prevTab}" />
+            <lightning:button class="slds-button slds-button_brand slds-m-left_large" label="Save"
+                onclick="{!c.saveRecord}" />
+        </div>
+    </aura:renderIf>
+
+</aura:component>

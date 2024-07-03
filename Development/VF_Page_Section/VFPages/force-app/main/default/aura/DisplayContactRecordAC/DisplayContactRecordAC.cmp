@@ -1,0 +1,65 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="AllContactsRecord">
+    <aura:attribute name='pageSize' type='Integer' default="10" />
+    <aura:attribute name='pageNo' type='Integer' default="0" />
+    <aura:attribute name='searchWords' type="String" default="" />
+    <aura:attribute name='contactsList' type="Contact[]" />
+    <aura:attribute name='totalRec' type="Integer" default="0" />
+
+    <aura:attribute name='accId' type="String" default=" " />
+    <aura:attribute name='accountsList' type="Account[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class='slds-page-header slds-text-heading_medium'>
+        contacts
+    </div>
+
+    <div class='slds-m-around_small'>
+        <lightning:input class='slds-size_1-of-5' type="text" label="Search here.." aura:Id='searchWord'
+            onchange="{!c.getSearchRecords}" />
+    </div>
+
+    <div class='slds-m-around_small'>
+        <table border="1">
+            <tr>
+                <th style="text-align: center; padding:10px;">Name</th>
+                <th style="text-align: center; padding:10px;">Rating</th>
+                <th style="text-align: center; padding:10px;">Type</th>
+            </tr>
+            <aura:iteration var="acc" items="{!v.accountsList}">
+                <tr>
+                    <td style="text-align: center; padding:10px;" id='{!acc.Id}'><a href="javascript:void(0);"
+                            id="{!acc.Id}" onclick="{!c.getRelatedContact}">{!acc.Name}</a></td>
+                    <td style="text-align: center; padding:10px;">{!acc.Rating}</td>
+                    <td style="text-align: center; padding:10px;">{!acc.Type}</td>
+                </tr>
+            </aura:iteration>
+        </table>
+    </div>
+
+    <div class="slds-m-around_small slds-text-align_right">
+        <lightning:button class="slds-button slds-button_brand" label="Previous" onclick="{!c.previoudRecord}"
+            disabled="{!v.pageNo == 0}" />
+        <lightning:button class="slds-button slds-button_brand slds-m-left_large" label="Next" onclick="{!c.nextRecord}"
+            disabled="{!v.pageNo * v.pageSize >= v.totalRec}" />
+    </div>
+
+    <div class='slds-m-around_small'>
+        <table border="1">
+            <tr>
+                <th style="text-align: center; padding:10px;">FirstName</th>
+                <th style="text-align: center; padding:10px;">LastName</th>
+                <th style="text-align: center; padding:10px;">Email</th>
+            </tr>
+            <aura:iteration var="con" items="{!v.contactsList}">
+                <tr>
+                    <td style="text-align: center; padding:10px;">{!con.FirstName}</td>
+                    <td style="text-align: center; padding:10px;">{!con.LastName}</td>
+                    <td style="text-align: center; padding:10px;">{!con.Email}</td>
+                </tr>
+            </aura:iteration>
+        </table>
+    </div>
+
+
+</aura:component>

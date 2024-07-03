@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Opportunity</members>
+        <name>Workflow</name>
+    </types>
+    <types>
+        <members>Opportunity.Approval_status_pending</members>
+        <members>Opportunity.Approval_Status_to_Approved</members>
+        <members>Opportunity.Approval_to_Not_approved</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+
+    <types>
+        <members>unfiled$public/Oppertunity_Changed</members>
+        <members>Process_approval_email_template/Discount_Approved</members>
+        <members>Process_approval_email_template/Discount_Rejected</members>
+        <name>EmailTemplate</name>
+    </types>
+
+    <version>59.0</version>
+</Package>

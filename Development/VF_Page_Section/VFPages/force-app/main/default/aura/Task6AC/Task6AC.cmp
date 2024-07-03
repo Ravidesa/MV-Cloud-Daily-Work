@@ -1,0 +1,35 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:attribute name="imgUrl" type="String" default=""/>
+    <aura:attribute name="bgColor" type="String" default="#adb5bd" />
+    <aura:attribute name="fontSize" type="String" default="30px" />
+    <aura:attribute name="fColor" type="String" default="#3c6e71" />
+    <aura:attribute name="desc" type="String" default="description is nothing here...." />
+    
+    <aura:html tag="style">
+       :root {
+            --backgroundColor: {!v.bgColor};
+            --fontColor: {!v.fColor};
+            --fontSize: {!v.fontSize};
+       }
+   </aura:html>
+
+    <div class="slds-m-around_small">
+        <lightning:input type="text" label="Enter Image url" aura:Id='imgUrl' />
+        <lightning:input type="text" label="Enter Background color" aura:Id='bgColor' />
+        <lightning:input type="text" label="Enter Font Size" aura:Id='fSize' />
+        <lightning:input type="text" label="Enter Font color" aura:Id='fColor' />
+        <lightning:input type="text" label="Enter Description" aura:Id='desc' />
+    </div>
+
+    <div class="slds-m-around_small">
+        <lightning:button class="slds-button slds-button_brand" label='Save' onclick='{!c.save}' />
+    </div>
+    
+    <div class="slds-m-around_small bg">
+        <div class="demos">
+            <img src="{!v.imgUrl}" alt="noImg"/>
+        </div>
+        <p class="slds-m-top_small slds-align_absolute-center demo">{!v.desc}</p>
+    </div>
+
+</aura:component>

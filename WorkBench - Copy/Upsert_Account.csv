@@ -1,0 +1,3 @@
+Salesforce Id,Result,Status,Id,Name,Rating,Description
+001dL000007ZHTOQA4,Success,Updated,001dL000007ZHTOQA4,Account1_Updated,Hot,Updated
+001dL000007crDlQAI,Success,Created,,UpsertAccount,Warm,Inserted

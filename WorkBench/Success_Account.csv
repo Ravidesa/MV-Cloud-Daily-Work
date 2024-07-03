@@ -1,0 +1,51 @@
+"Salesforce Id",Result,Status,Name,Rating,Type,AnnualRevenue,Phone,Description,Website
+001dL000007ZHTOQA4,Success,Created,Account1,Warm,Prospect,100000,9109109109,Inseterd,www.account1.com
+001dL000007ZHTPQA4,Success,Created,Account2,Warm,Prospect,100000,9109109898,Inseterd,www.account2.com
+001dL000007ZHTQQA4,Success,Created,Account3,Warm,Prospect,100000,1234567890,Inseterd,www.account3.com
+001dL000007ZHTRQA4,Success,Created,Account4,Warm,Prospect,100000,9021902187,Inseterd,www.account4.com
+001dL000007ZHTSQA4,Success,Created,Account5,Warm,Prospect,100000,9109109109,Inseterd,www.account5.com
+001dL000007ZHTTQA4,Success,Created,Account6,Warm,Prospect,100000,9109109898,Inseterd,www.account6.com
+001dL000007ZHTUQA4,Success,Created,Account7,Warm,Prospect,100000,1234567890,Inseterd,www.account7.com
+001dL000007ZHTVQA4,Success,Created,Account8,Warm,Prospect,100000,9021902187,Inseterd,www.account8.com
+001dL000007ZHTWQA4,Success,Created,Account9,Warm,Prospect,100000,9109109109,Inseterd,www.account9.com
+001dL000007ZHTXQA4,Success,Created,Account10,Warm,Prospect,97342,9109109898,Inseterd,www.account10.com
+001dL000007ZHTYQA4,Success,Created,Account11,Warm,Prospect,97342,1234567890,Inseterd,www.account1.com
+001dL000007ZHTZQA4,Success,Created,Account12,Warm,Prospect,97342,9021902187,Inseterd,www.account2.com
+001dL000007ZHTaQAO,Success,Created,Account13,Warm,Prospect,97342,9109109109,Inseterd,www.account3.com
+001dL000007ZHTbQAO,Success,Created,Account14,Hot,Prospect,97342,9109109898,Inseterd,www.account4.com
+001dL000007ZHTcQAO,Success,Created,Account15,Hot,Prospect,97342,1234567890,Inseterd,www.account5.com
+001dL000007ZHTdQAO,Success,Created,Account16,Hot,Prospect,97342,9021902187,Inseterd,www.account6.com
+001dL000007ZHTeQAO,Success,Created,Account17,Hot,Prospect,97342,9109109109,Inseterd,www.account7.com
+001dL000007ZHTfQAO,Success,Created,Account18,Hot,Prospect,97342,9109109898,Inseterd,www.account8.com
+001dL000007ZHTgQAO,Success,Created,Account19,Hot,Prospect,97342,1234567890,Inseterd,www.account9.com
+001dL000007ZHThQAO,Success,Created,Account20,Hot,Prospect,97342,9021902187,Inseterd,www.account10.com
+001dL000007ZHTiQAO,Success,Created,Account21,Hot,Prospect,97342,9109109109,Inseterd,www.account1.com
+001dL000007ZHTjQAO,Success,Created,Account22,Hot,Prospect,87600,9109109898,Inseterd,www.account2.com
+001dL000007ZHTkQAO,Success,Created,Account23,Hot,Prospect,87600,1234567890,Inseterd,www.account3.com
+001dL000007ZHTlQAO,Success,Created,Account24,Hot,Prospect,87600,9021902187,Inseterd,www.account4.com
+001dL000007ZHTmQAO,Success,Created,Account25,Hot,Prospect,87600,9109109109,Inseterd,www.account5.com
+001dL000007ZHTnQAO,Success,Created,Account26,Hot,Prospect,87600,9109109898,Inseterd,www.account6.com
+001dL000007ZHToQAO,Success,Created,Account27,Hot,Prospect,87600,1234567890,Inseterd,www.account7.com
+001dL000007ZHTpQAO,Success,Created,Account28,Hot,Prospect,87600,9021902187,Inseterd,www.account8.com
+001dL000007ZHTqQAO,Success,Created,Account29,Hot,"Channel Partner / Reseller",87600,9109109109,Inseterd,www.account9.com
+001dL000007ZHTrQAO,Success,Created,Account30,Hot,"Channel Partner / Reseller",87600,9109109898,Inseterd,www.account10.com
+001dL000007ZHTsQAO,Success,Created,Account31,Hot,"Channel Partner / Reseller",87600,1234567890,Inseterd,www.account1.com
+001dL000007ZHTtQAO,Success,Created,Account32,Hot,"Channel Partner / Reseller",87600,9021902187,Inseterd,www.account2.com
+001dL000007ZHTuQAO,Success,Created,Account33,Cold,"Channel Partner / Reseller",87600,9109109109,Inseterd,www.account3.com
+001dL000007ZHTvQAO,Success,Created,Account34,Cold,"Channel Partner / Reseller",87600,9109109898,Inseterd,www.account4.com
+001dL000007ZHTwQAO,Success,Created,Account35,Cold,"Channel Partner / Reseller",87600,1234567890,Inseterd,www.account5.com
+001dL000007ZHTxQAO,Success,Created,Account36,Cold,"Channel Partner / Reseller",87600,9021902187,Inseterd,www.account6.com
+001dL000007ZHTyQAO,Success,Created,Account37,Cold,"Channel Partner / Reseller",87600,9109109109,Inseterd,www.account7.com
+001dL000007ZHTzQAO,Success,Created,Account38,Cold,"Channel Partner / Reseller",87600,9109109898,Inseterd,www.account8.com
+001dL000007ZHU0QAO,Success,Created,Account39,Cold,"Channel Partner / Reseller",23900,1234567890,Inseterd,www.account9.com
+001dL000007ZHU1QAO,Success,Created,Account40,Cold,"Channel Partner / Reseller",23900,9021902187,Inseterd,www.account10.com
+001dL000007ZHU2QAO,Success,Created,Account41,Cold,"Channel Partner / Reseller",23900,9109109109,Inseterd,www.account1.com
+001dL000007ZHU3QAO,Success,Created,Account42,Cold,"Channel Partner / Reseller",23900,9109109898,Inseterd,www.account2.com
+001dL000007ZHU4QAO,Success,Created,Account43,Cold,"Channel Partner / Reseller",23900,1234567890,Inseterd,www.account3.com
+001dL000007ZHU5QAO,Success,Created,Account44,Cold,"Channel Partner / Reseller",23900,9021902187,Inseterd,www.account4.com
+001dL000007ZHU6QAO,Success,Created,Account45,Cold,"Channel Partner / Reseller",23900,9109109109,Inseterd,www.account5.com
+001dL000007ZHU7QAO,Success,Created,Account46,Cold,"Channel Partner / Reseller",23900,9109109898,Inseterd,www.account6.com
+001dL000007ZHU8QAO,Success,Created,Account47,Cold,"Channel Partner / Reseller",23900,1234567890,Inseterd,www.account7.com
+001dL000007ZHU9QAO,Success,Created,Account48,Cold,"Channel Partner / Reseller",23900,9021902187,Inseterd,www.account8.com
+001dL000007ZHUAQA4,Success,Created,Account49,Cold,"Channel Partner / Reseller",23900,9109109109,Inseterd,www.account9.com
+001dL000007ZHUBQA4,Success,Created,Account50,Cold,"Channel Partner / Reseller",23900,9109109898,Inseterd,www.account10.com

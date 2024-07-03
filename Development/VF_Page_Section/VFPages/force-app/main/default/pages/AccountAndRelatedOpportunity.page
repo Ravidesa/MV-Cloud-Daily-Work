@@ -1,0 +1,22 @@
+<apex:page controller="AccountAndOpportunityController">
+    <apex:form >
+        <h2>Select Account</h2>
+        &nbsp;
+        <apex:selectList size="1" value="{!accId}">
+            <apex:selectOptions value="{!accOptions}" />
+            <apex:actionSupport event="onchange" reRender="listOfOpportunityId" action="{!fetchAllOpportunity}"/>
+        </apex:selectList>
+        
+        <apex:pageBlock title="List of Related Opportunity" id="listOfOpportunityId">
+        	<apex:pageBlockTable value="{!oppList}" var="opp">
+                <apex:column value="{!opp.Name}" />
+                <apex:column value="{!opp.StageName}"/>
+                <apex:column value="{!opp.CloseDate}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:commandButton value="Previous" action="{!previous}" />
+        <apex:commandButton value="Next" action="{!next}" />
+        
+    </apex:form>
+</apex:page>

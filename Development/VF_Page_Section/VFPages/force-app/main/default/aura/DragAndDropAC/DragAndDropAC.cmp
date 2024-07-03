@@ -1,0 +1,72 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" controller="DragAndDropController">
+    <aura:attribute name="parentAcc1" type="String" default="" />
+    <aura:attribute name="parentAcc2" type="String" default="" />
+    <aura:attribute name="contactList1" type="Contact[]" default="" />
+    <aura:attribute name="contactList2" type="Contact[]" default="" />
+    
+    <aura:attribute name="totalContact1" type="Integer" default="0" />
+    <aura:attribute name="totalContact2" type="Integer" default="0" />
+    
+
+    <div class="example-parent">
+        <div class="example-origin">
+            <div id="draggable-1" class="example-draggable" draggable="true" ondragstart="{!c.dragStart}">
+                thing 1
+            </div>
+            <div id="draggable-2" class="example-draggable" draggable="true" ondragstart="{!c.dragStart}">
+                thing 2
+            </div>
+            <div id="draggable-3" class="example-draggable" draggable="true" ondragstart="{!c.dragStart}">
+                thing 3
+            </div>
+            <div id="draggable-4" class="example-draggable" draggable="true" ondragstart="{!c.dragStart}">
+                thing 4
+            </div>
+        </div>
+
+        <div class="example-dropzone" ondragover="{!c.dragOver}" ondrop="{!c.drops}">
+            Done
+        </div>
+    </div>
+
+
+    <div class="c-container">
+        <lightning:layout verticalAlign="stretch" multipleRows="true" class="x-large">
+            
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <div id="{!v.parentAcc1}">
+                    <div class='slds-page-header slds-text-heading_medium'>
+                        Account 1
+                    </div>
+                    <lightning:input type="text" label="Search for account.." aura:Id='searchWord1'
+                        onchange="{!c.getSearchRecordsAcc1}" />
+                    <aura:iteration var="con" items="{!v.contactList1}">
+                        <p id="{!con.Id}" draggable="true" ondragstart="{!c.dragStartAcc1}">{!con.FirstName} &nbsp; {!con.LastName} </p>
+                    </aura:iteration>
+
+                    <div>
+                        <h1>Total Contact is : {!v.totalContact1}</h1>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+
+            
+            <lightning:layoutItem flexibility="auto" padding="around-small" class="custom-box">
+                <div id="{!v.parentAcc2}" ondragover="{!c.dragOver}" ondrop="{!c.drops2}">
+                    <div class='slds-page-header slds-text-heading_medium'>
+                        Account 2
+                    </div>
+                    <lightning:input type="text" label="Search For Second Account.." aura:Id='searchWord2'
+                        onchange="{!c.getSearchRecordsAcc2}" />
+                    <aura:iteration var="con" items="{!v.contactList2}">
+                        <p id="{!con.Id}">{!con.FirstName} &nbsp; {!con.LastName}</p>
+                    </aura:iteration>
+                    <div>
+                        <h1>Total Contact is : {!v.totalContact2}</h1>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+</aura:component>

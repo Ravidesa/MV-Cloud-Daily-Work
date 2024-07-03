@@ -1,0 +1,52 @@
+.THIS {
+    background-color: beige;
+    margin: 35px;
+}
+
+.THIS.example-parent{
+    border: 1px solid gray;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.THIS.example-origin{
+    padding: 10px;
+}
+
+.THIS.example-draggable {
+  background: #4AAE9B;
+  font-weight: normal;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.THIS.example-dropzone{
+  background-color: #6DB65B;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Starts from here */
+
+.THIS.c-container {
+    border: 1px solid #d8dde6;
+}
+
+.THIS .large {
+    height: 200px;
+}
+
+.THIS .x-large {
+    height: 300px;
+}
+
+.THIS .custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}

@@ -1,0 +1,51 @@
+Name,Rating,Type,AnnualRevenue,Phone,Description,Website
+Account1,Warm,Prospect,100000,9109109109,Inseterd,www.account1.com
+Account2,Warm,Prospect,100000,9109109898,Inseterd,www.account2.com
+Account3,Warm,Prospect,100000,1234567890,Inseterd,www.account3.com
+Account4,Warm,Prospect,100000,9021902187,Inseterd,www.account4.com
+Account5,Warm,Prospect,100000,9109109109,Inseterd,www.account5.com
+Account6,Warm,Prospect,100000,9109109898,Inseterd,www.account6.com
+Account7,Warm,Prospect,100000,1234567890,Inseterd,www.account7.com
+Account8,Warm,Prospect,100000,9021902187,Inseterd,www.account8.com
+Account9,Warm,Prospect,100000,9109109109,Inseterd,www.account9.com
+Account10,Warm,Prospect,97342,9109109898,Inseterd,www.account10.com
+Account11,Warm,Prospect,97342,1234567890,Inseterd,www.account1.com
+Account12,Warm,Prospect,97342,9021902187,Inseterd,www.account2.com
+Account13,Warm,Prospect,97342,9109109109,Inseterd,www.account3.com
+Account14,Hot,Prospect,97342,9109109898,Inseterd,www.account4.com
+Account15,Hot,Prospect,97342,1234567890,Inseterd,www.account5.com
+Account16,Hot,Prospect,97342,9021902187,Inseterd,www.account6.com
+Account17,Hot,Prospect,97342,9109109109,Inseterd,www.account7.com
+Account18,Hot,Prospect,97342,9109109898,Inseterd,www.account8.com
+Account19,Hot,Prospect,97342,1234567890,Inseterd,www.account9.com
+Account20,Hot,Prospect,97342,9021902187,Inseterd,www.account10.com
+Account21,Hot,Prospect,97342,9109109109,Inseterd,www.account1.com
+Account22,Hot,Prospect,87600,9109109898,Inseterd,www.account2.com
+Account23,Hot,Prospect,87600,1234567890,Inseterd,www.account3.com
+Account24,Hot,Prospect,87600,9021902187,Inseterd,www.account4.com
+Account25,Hot,Prospect,87600,9109109109,Inseterd,www.account5.com
+Account26,Hot,Prospect,87600,9109109898,Inseterd,www.account6.com
+Account27,Hot,Prospect,87600,1234567890,Inseterd,www.account7.com
+Account28,Hot,Prospect,87600,9021902187,Inseterd,www.account8.com
+Account29,Hot,Channel Partner / Reseller,87600,9109109109,Inseterd,www.account9.com
+Account30,Hot,Channel Partner / Reseller,87600,9109109898,Inseterd,www.account10.com
+Account31,Hot,Channel Partner / Reseller,87600,1234567890,Inseterd,www.account1.com
+Account32,Hot,Channel Partner / Reseller,87600,9021902187,Inseterd,www.account2.com
+Account33,Cold,Channel Partner / Reseller,87600,9109109109,Inseterd,www.account3.com
+Account34,Cold,Channel Partner / Reseller,87600,9109109898,Inseterd,www.account4.com
+Account35,Cold,Channel Partner / Reseller,87600,1234567890,Inseterd,www.account5.com
+Account36,Cold,Channel Partner / Reseller,87600,9021902187,Inseterd,www.account6.com
+Account37,Cold,Channel Partner / Reseller,87600,9109109109,Inseterd,www.account7.com
+Account38,Cold,Channel Partner / Reseller,87600,9109109898,Inseterd,www.account8.com
+Account39,Cold,Channel Partner / Reseller,23900,1234567890,Inseterd,www.account9.com
+Account40,Cold,Channel Partner / Reseller,23900,9021902187,Inseterd,www.account10.com
+Account41,Cold,Channel Partner / Reseller,23900,9109109109,Inseterd,www.account1.com
+Account42,Cold,Channel Partner / Reseller,23900,9109109898,Inseterd,www.account2.com
+Account43,Cold,Channel Partner / Reseller,23900,1234567890,Inseterd,www.account3.com
+Account44,Cold,Channel Partner / Reseller,23900,9021902187,Inseterd,www.account4.com
+Account45,Cold,Channel Partner / Reseller,23900,9109109109,Inseterd,www.account5.com
+Account46,Cold,Channel Partner / Reseller,23900,9109109898,Inseterd,www.account6.com
+Account47,Cold,Channel Partner / Reseller,23900,1234567890,Inseterd,www.account7.com
+Account48,Cold,Channel Partner / Reseller,23900,9021902187,Inseterd,www.account8.com
+Account49,Cold,Channel Partner / Reseller,23900,9109109109,Inseterd,www.account9.com
+Account50,Cold,Channel Partner / Reseller,23900,9109109898,Inseterd,www.account10.com

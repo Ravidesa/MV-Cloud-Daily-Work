@@ -1,0 +1,51 @@
+"Salesforce Id",Result,Status,Name,StageName,CloseDate,AccountId
+006dL0000013UdiQAE,Success,Created,Opportunity1,Prospecting,2024-06-15,001dL000007ZHTOQA4
+006dL0000013UdjQAE,Success,Created,Opportunity2,Qualification,2024-06-16,001dL000007ZHTPQA4
+006dL0000013UdkQAE,Success,Created,Opportunity3,"Needs Analysis",2024-06-17,001dL000007ZHTQQA4
+006dL0000013UdlQAE,Success,Created,Opportunity4,Prospecting,2024-06-18,001dL000007ZHTRQA4
+006dL0000013UdmQAE,Success,Created,Opportunity5,Qualification,2024-06-19,001dL000007ZHTSQA4
+006dL0000013UdnQAE,Success,Created,Opportunity6,"Needs Analysis",2024-06-20,001dL000007ZHTTQA4
+006dL0000013UdoQAE,Success,Created,Opportunity7,Prospecting,2024-06-21,001dL000007ZHTUQA4
+006dL0000013UdpQAE,Success,Created,Opportunity8,Qualification,2024-06-15,001dL000007ZHTVQA4
+006dL0000013UdqQAE,Success,Created,Opportunity9,"Needs Analysis",2024-06-16,001dL000007ZHTWQA4
+006dL0000013UdrQAE,Success,Created,Opportunity10,Prospecting,2024-06-17,001dL000007ZHTXQA4
+006dL0000013UdsQAE,Success,Created,Opportunity11,Qualification,2024-06-18,001dL000007ZHTYQA4
+006dL0000013UdtQAE,Success,Created,Opportunity12,"Needs Analysis",2024-06-19,001dL000007ZHTZQA4
+006dL0000013UduQAE,Success,Created,Opportunity13,Prospecting,2024-06-20,001dL000007ZHTaQAO
+006dL0000013UdvQAE,Success,Created,Opportunity14,Qualification,2024-06-21,001dL000007ZHTbQAO
+006dL0000013UdwQAE,Success,Created,Opportunity15,"Needs Analysis",2024-06-15,001dL000007ZHTcQAO
+006dL0000013UdxQAE,Success,Created,Opportunity16,Prospecting,2024-06-16,001dL000007ZHTdQAO
+006dL0000013UdyQAE,Success,Created,Opportunity17,Qualification,2024-06-17,001dL000007ZHTeQAO
+006dL0000013UdzQAE,Success,Created,Opportunity18,"Needs Analysis",2024-06-18,001dL000007ZHTfQAO
+006dL0000013Ue0QAE,Success,Created,Opportunity19,Prospecting,2024-06-19,001dL000007ZHTgQAO
+006dL0000013Ue1QAE,Success,Created,Opportunity20,Qualification,2024-06-20,001dL000007ZHThQAO
+006dL0000013Ue2QAE,Success,Created,Opportunity21,"Needs Analysis",2024-06-21,001dL000007ZHTiQAO
+006dL0000013Ue3QAE,Success,Created,Opportunity22,Prospecting,2024-06-15,001dL000007ZHTjQAO
+006dL0000013Ue4QAE,Success,Created,Opportunity23,Qualification,2024-06-16,001dL000007ZHTkQAO
+006dL0000013Ue5QAE,Success,Created,Opportunity24,"Needs Analysis",2024-06-17,001dL000007ZHTlQAO
+006dL0000013Ue6QAE,Success,Created,Opportunity25,Prospecting,2024-06-18,001dL000007ZHTmQAO
+006dL0000013Ue7QAE,Success,Created,Opportunity26,Qualification,2024-06-19,001dL000007ZHTnQAO
+006dL0000013Ue8QAE,Success,Created,Opportunity27,"Needs Analysis",2024-06-20,001dL000007ZHToQAO
+006dL0000013Ue9QAE,Success,Created,Opportunity28,Prospecting,2024-06-21,001dL000007ZHTpQAO
+006dL0000013UeAQAU,Success,Created,Opportunity29,Qualification,2024-06-16,001dL000007ZHTqQAO
+006dL0000013UeBQAU,Success,Created,Opportunity30,"Needs Analysis",2024-06-17,001dL000007ZHTrQAO
+006dL0000013UeCQAU,Success,Created,Opportunity31,Prospecting,2024-06-18,001dL000007ZHTsQAO
+006dL0000013UeDQAU,Success,Created,Opportunity32,Qualification,2024-06-19,001dL000007ZHTtQAO
+006dL0000013UeEQAU,Success,Created,Opportunity33,"Needs Analysis",2024-06-20,001dL000007ZHTuQAO
+006dL0000013UeFQAU,Success,Created,Opportunity34,Prospecting,2024-06-21,001dL000007ZHTvQAO
+006dL0000013UeGQAU,Success,Created,Opportunity35,Qualification,2024-06-15,001dL000007ZHTwQAO
+006dL0000013UeHQAU,Success,Created,Opportunity36,"Needs Analysis",2024-06-16,001dL000007ZHTxQAO
+006dL0000013UeIQAU,Success,Created,Opportunity37,Prospecting,2024-06-17,001dL000007ZHTyQAO
+006dL0000013UeJQAU,Success,Created,Opportunity38,Qualification,2024-06-18,001dL000007ZHTzQAO
+006dL0000013UeKQAU,Success,Created,Opportunity39,"Needs Analysis",2024-06-19,001dL000007ZHU0QAO
+006dL0000013UeLQAU,Success,Created,Opportunity40,Prospecting,2024-06-20,001dL000007ZHU1QAO
+006dL0000013UeMQAU,Success,Created,Opportunity41,Qualification,2024-06-21,001dL000007ZHU2QAO
+006dL0000013UeNQAU,Success,Created,Opportunity42,"Needs Analysis",2024-06-16,001dL000007ZHU3QAO
+006dL0000013UeOQAU,Success,Created,Opportunity43,Prospecting,2024-06-17,001dL000007ZHU4QAO
+006dL0000013UePQAU,Success,Created,Opportunity44,Qualification,2024-06-18,001dL000007ZHU5QAO
+006dL0000013UeQQAU,Success,Created,Opportunity45,"Needs Analysis",2024-06-19,001dL000007ZHU6QAO
+006dL0000013UeRQAU,Success,Created,Opportunity46,Prospecting,2024-06-20,001dL000007ZHU7QAO
+006dL0000013UeSQAU,Success,Created,Opportunity47,Qualification,2024-06-21,001dL000007ZHU8QAO
+006dL0000013UeTQAU,Success,Created,Opportunity48,"Needs Analysis",2024-06-15,001dL000007ZHU9QAO
+006dL0000013UeUQAU,Success,Created,Opportunity49,Prospecting,2024-06-16,001dL000007ZHUAQA4
+006dL0000013UeVQAU,Success,Created,Opportunity50,Qualification,2024-06-17,001dL000007ZHUBQA4

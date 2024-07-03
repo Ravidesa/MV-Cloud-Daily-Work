@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="container" id="container">
+
+        <div class="right" id="right">
+            <p class="p1"></p>
+            <p class="p2"></p>
+            <p class="p3"></p>
+            <p class="p4"></p>
+        </div>
+
+        <div class="left" id="left" >
+            <p class="drag" draggable="true"></p>
+        </div>
+        
+    </div>
+
+    <!-- <script>
+        let circle = document.getElementsByClassName("circle");
+        let leftBox = document.getElementById("left");
+        let rightBox = document.getElementById("right");
+
+        for(ele of circle){
+            ele.addEventListener("dragstart", function(e){
+                let selected = e.target;
+                console.log(selected);
+
+                rightBox.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                })
+
+                rightBox.addEventListener("drop", function(e){
+                    selected.style.height = '20px';
+                    selected.style.width = '20px';
+                    rightBox.appendChild(selected);
+                    selected = null;
+                })
+
+            })
+        }
+    </script> -->
+
+    <script>
+        let container = document.getElementById("container");
+        let leftBox = document.getElementById("left");
+        let rightBox = document.getElementById("right");
+        let count = 0;
+        let left = 'left'+count;
+        leftBox.addEventListener("dragstart", function(e){
+            let selected = e.target;
+            console.log(selected);
+
+            rightBox.addEventListener("dragover", function(e){
+                e.preventDefault();
+            })
+
+            rightBox.addEventListener("drop", function(e){
+                selected.style.height = 20+'px';
+                selected.style.width = 20+'px';
+                rightBox.appendChild(selected);
+                selected = null;
+
+                let div = document.createElement('div');
+                count++;
+                left = left+count;
+                div.setAttribute("class", left);
+                div.setAttribute("id", left);
+                div.setAttribute("draggable", "true");
+                div.style.height = 120+'px';
+                div.style.width = 120+'px';
+                div.style.backgroundColor = 'red';
+                div.style.borderRadius = 50+'%';
+                leftBox = div;
+                console.log("left box --> ", leftBox);
+                leftBox.appendChild(div);
+            })
+
+        })
+
+        
+
+    </script>
+</body>
+</html>

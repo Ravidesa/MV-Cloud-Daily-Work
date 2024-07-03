@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resizable Circles</title>
+<style>
+    #container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-color: lightgrey;
+        border-radius: 50%;
+        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .circle {
+        cursor: move;
+        border-radius: 50%;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <div class="circle" id="circle1" style="width: 100px; height: 100px; background-color: red;"></div>
+    <div class="circle" id="circle2" style="width: 200px; height: 200px; background-color: blue;"></div>
+</div>
+
+<script>
+    let container = document.getElementById('container');
+    let circle1 = document.getElementById('circle1');
+    let circle2 = document.getElementById('circle2');
+
+    circle1.addEventListener('mousedown', dragStart);
+
+    function dragStart(e) {
+        e.preventDefault();
+        let offsetX = e.clientX - circle1.getBoundingClientRect().left;
+        let offsetY = e.clientY - circle1.getBoundingClientRect().top;
+
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', dragEnd);
+
+        function drag(e) {
+            let x = e.clientX - offsetX;
+            let y = e.clientY - offsetY;
+            let minX = container.getBoundingClientRect().left;
+            let minY = container.getBoundingClientRect().top;
+            let maxX = container.getBoundingClientRect().right - circle1.offsetWidth;
+            let maxY = container.getBoundingClientRect().bottom - circle1.offsetHeight;
+
+            x = Math.min(Math.max(x, minX), maxX);
+            y = Math.min(Math.max(y, minY), maxY);
+
+            circle1.style.left = x + 'px';
+            circle1.style.top = y + 'px';
+        }
+
+        function dragEnd() {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', dragEnd);
+            let rect1 = circle1.getBoundingClientRect();
+            let rect2 = circle2.getBoundingClientRect();
+
+            if (rect1.left > rect2.left && rect1.right < rect2.right && rect1.top > rect2.top && rect1.bottom < rect2.bottom) {
+                let newSize = circle2.offsetWidth - 20;
+                circle2.style.width = newSize + 'px';
+                circle2.style.height = newSize + 'px';
+                circle1.style.display = 'none';
+
+                let newCircle = document.createElement('div');
+                newCircle.className = 'circle';
+                newCircle.style.width = circle1.offsetWidth + 'px';
+                newCircle.style.height = circle1.offsetHeight + 'px';
+                newCircle.style.backgroundColor = getRandomColor();
+                newCircle.style.left = (circle2.offsetWidth - newCircle.offsetWidth) / 2 + 'px';
+                newCircle.style.top = (circle2.offsetHeight - newCircle.offsetHeight) / 2 + 'px';
+                container.appendChild(newCircle);
+            }
+        }
+    }
+
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>

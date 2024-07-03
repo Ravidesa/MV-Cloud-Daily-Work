@@ -1,0 +1,25 @@
+.THIS {
+}
+
+.THIS.bg{
+    background-color: var(--backgroundColor);
+    position: relative;
+    width: 100vw;
+}
+
+.THIS .demos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+}
+
+.THIS img{
+    width: 250px;
+    height: 150px;
+}
+
+.THIS .demo{
+    font-size: var(--fontSize);
+    color: var(--fontColor);
+}

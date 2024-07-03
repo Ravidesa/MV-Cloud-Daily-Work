@@ -1,0 +1,46 @@
+<template>
+
+    <lightning-card title="Contact Record Form">
+        <div>
+            Contact Name is : {conName}
+        </div>
+        <div class="slds-m-around_medium">
+            <div class="slds-grid slds-gutters_x-small">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="FirstName" name="fName" value={fName}
+                        onchange={inputChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="LastName" name="lName" value={lName}
+                        onchange={inputChange}></lightning-input>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-m-top_large slds-gutters_x-small">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input label="Phone" name="phone" value={phone} onchange={inputChange}></lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2 slds-m-top_xx-small">
+                    <label>Select Lead Source</label>
+                    <select class="slds-select" name="leadSource" onchange={inputChange}>
+                        <option value="">Select an Option...</option>
+                        <option value="Web">Web</option>
+                        <option value="Phone Inquiry">Phone Inquiry</option>
+                        <option value="Partner Referral">Partner Referral</option>
+                        <option value="Purchased List">Purchased List</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slds-text-align_right slds-m-around_small">
+            <lightning-button variant="brand" label="Save"
+             onclick={handleClick} ></lightning-button>
+        </div>
+
+    </lightning-card>
+
+
+</template>
